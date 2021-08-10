@@ -45,19 +45,13 @@ trait HandlesUpdates
      *
      * @param Update $update - Telegram update object. Leave empty to try to get it from incoming POST request (for handling webhook)
      *
-     * @return false|Update
+     * @return void
      */
-    public function handleUpdate(Update $update = null)
+    public function handleUpdate(Update $update)
     {
-        if (!$this->validUpdate($update)) {
-            return false;
-        }
-
         foreach ($this->kernel->handlers() as $handler) {
             $this->callHandler($handler, $update);
         }
-
-        return $update;
     }
 
     /**
@@ -122,31 +116,5 @@ trait HandlesUpdates
     {
         return is_callable($handler) ||
             is_string($handler) && class_exists($handler) && is_subclass_of($handler, UpdateHandler::class);
-    }
-
-    /**
-     * Check if update is a valid telegram update.
-     *
-     * @param mixed $update - Telegram update object. Leave empty to try to get it from incoming POST request (for handling webhook)
-     *
-     * @return bool
-     */
-    private function validUpdate(&$update = null)
-    {
-        if (is_null($update)) {
-            try {
-                $data = json_decode(file_get_contents('php://input'), true) ?? request()->all();
-            }
-            catch (Exception $e) {
-                $data = null;
-            }
-
-            if (is_null($data) || !isset($data['update_id'])) {
-                return false;
-            }
-            $update = new Update($data);
-        }
-
-        return $update instanceof Update;
     }
 }

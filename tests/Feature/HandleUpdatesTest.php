@@ -100,11 +100,6 @@ class HandleUpdatesTest extends TestCase
         $this->bot->callHandler('something wrong', new Update([]), true);
     }
 
-    public function testNoUpdates()
-    {
-        $this->assertFalse($this->bot->handleUpdate());
-    }
-
     public function testGetConfig()
     {
         $this->assertEquals(getenv('TELEGRAM_BOT_TOKEN'), $this->bot->getConfig()['token']);

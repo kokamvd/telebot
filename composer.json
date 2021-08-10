@@ -1,6 +1,6 @@
 {
     "name": "westacks/telebot",
-    "description": "Easy way to create Telegram-bots in PHP",
+    "description": "Elegant PHP Telegram bot framework.",
     "type": "library",
     "homepage": "https://github.com/westacks/telebot",
     "license": "MIT",
@@ -13,12 +13,9 @@
     ],
     "require": {
         "php": "^7.2 || ^8.0",
-        "guzzlehttp/guzzle": "^6.0 || ^7.0",
-        "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0"
+        "guzzlehttp/guzzle": "^6.0 || ^7.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.5 || ^4.0 || ^5.0 || ^6.0",
-        "php-coveralls/php-coveralls": "^2.2",
         "phpunit/phpunit": "^8.0"
     },
     "autoload": {
@@ -34,16 +31,6 @@
     "scripts": {
         "test": "phpunit",
         "testdox": "phpunit --testdox"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "WeStacks\\TeleBot\\Laravel\\TeleBotServiceProvider"
-            ],
-            "aliases": {
-                "TeleBot": "WeStacks\\TeleBot\\Laravel\\TeleBot"
-            }
-        }
     },
     "config": {
         "preferred-install": "dist",
