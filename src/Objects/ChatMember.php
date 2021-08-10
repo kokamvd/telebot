@@ -30,33 +30,31 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChatMember extends TelegramObject
 {
-    # WARN: The docs for chat member object was updated on 5.3 https://core.telegram.org/bots/api#chatmember
-    # This still works though.
-    protected function relations()
-    {
-        return [
-            'user' => User::class,
-            'status' => 'string',
-            'custom_title' => 'string',
-            'until_date' => 'integer',
-            'is_anonymous' => 'boolean',
-            'can_be_edited' => 'boolean',
-            'can_manage_chat' => 'boolean',
-            'can_post_messages' => 'boolean',
-            'can_edit_messages' => 'boolean',
-            'can_delete_messages' => 'boolean',
-            'can_manage_voice_chats ' => 'boolean',
-            'can_restrict_members' => 'boolean',
-            'can_promote_members' => 'boolean',
-            'can_change_info' => 'boolean',
-            'can_invite_users' => 'boolean',
-            'can_pin_messages' => 'boolean',
-            'is_member' => 'boolean',
-            'can_send_messages' => 'boolean',
-            'can_send_media_messages' => 'boolean',
-            'can_send_polls' => 'boolean',
-            'can_send_other_messages' => 'boolean',
-            'can_add_web_page_previews' => 'boolean',
-        ];
-    }
+    /**
+     * WARN: This still works as intended, but the docs for chat member object was updated on 5.3 https://core.telegram.org/bots/api#chatmember
+     */
+    protected $relations = [
+        'user' => User::class,
+        'status' => 'string',
+        'custom_title' => 'string',
+        'until_date' => 'integer',
+        'is_anonymous' => 'boolean',
+        'can_be_edited' => 'boolean',
+        'can_manage_chat' => 'boolean',
+        'can_post_messages' => 'boolean',
+        'can_edit_messages' => 'boolean',
+        'can_delete_messages' => 'boolean',
+        'can_manage_voice_chats ' => 'boolean',
+        'can_restrict_members' => 'boolean',
+        'can_promote_members' => 'boolean',
+        'can_change_info' => 'boolean',
+        'can_invite_users' => 'boolean',
+        'can_pin_messages' => 'boolean',
+        'is_member' => 'boolean',
+        'can_send_messages' => 'boolean',
+        'can_send_media_messages' => 'boolean',
+        'can_send_polls' => 'boolean',
+        'can_send_other_messages' => 'boolean',
+        'can_add_web_page_previews' => 'boolean',
+    ];
 }

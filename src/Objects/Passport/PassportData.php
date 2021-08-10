@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class PassportData extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'data' => [EncryptedPassportElement::class],
-            'credentials' => EncryptedCredentials::class,
-        ];
-    }
+    protected $relations = [
+        'data' => [EncryptedPassportElement::class],
+        'credentials' => EncryptedCredentials::class,
+    ];
 }

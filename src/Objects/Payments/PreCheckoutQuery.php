@@ -18,16 +18,13 @@ use WeStacks\TeleBot\Objects\User;
  */
 class PreCheckoutQuery extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'string',
-            'from' => User::class,
-            'currency' => 'string',
-            'total_amount' => 'integer',
-            'invoice_payload' => 'string',
-            'shipping_option_id' => 'string',
-            'order_info' => OrderInfo::class,
-        ];
-    }
+    protected $relations = [
+        'id' => 'string',
+        'from' => User::class,
+        'currency' => 'string',
+        'total_amount' => 'integer',
+        'invoice_payload' => 'string',
+        'shipping_option_id' => 'string',
+        'order_info' => OrderInfo::class,
+    ];
 }

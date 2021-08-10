@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class BotCommand extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'command' => 'string',
-            'description' => 'string',
-        ];
-    }
+    protected $relations = [
+        'command' => 'string',
+        'description' => 'string',
+    ];
 }

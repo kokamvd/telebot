@@ -22,19 +22,16 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InputMediaVideo extends InputMedia
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'media' => InputFile::class,
-            'thumb' => InputFile::class,
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'width' => 'integer',
-            'height' => 'integer',
-            'duration' => 'integer',
-            'supports_streaming' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'media' => InputFile::class,
+        'thumb' => InputFile::class,
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'width' => 'integer',
+        'height' => 'integer',
+        'duration' => 'integer',
+        'supports_streaming' => 'boolean',
+    ];
 }

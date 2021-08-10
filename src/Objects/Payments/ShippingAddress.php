@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ShippingAddress extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'country_code' => 'string',
-            'state' => 'string',
-            'city' => 'string',
-            'street_line1' => 'string',
-            'street_line2' => 'string',
-            'post_code' => 'string',
-        ];
-    }
+    protected $relations = [
+        'country_code' => 'string',
+        'state' => 'string',
+        'city' => 'string',
+        'street_line1' => 'string',
+        'street_line2' => 'string',
+        'post_code' => 'string',
+    ];
 }

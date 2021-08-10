@@ -29,24 +29,21 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InlineQueryResultVideo extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'video_url' => 'string',
-            'mime_type' => 'string',
-            'thumb_url' => 'string',
-            'title' => 'string',
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'video_width' => 'integer',
-            'video_height' => 'integer',
-            'video_duration' => 'integer',
-            'description' => 'string',
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'video_url' => 'string',
+        'mime_type' => 'string',
+        'thumb_url' => 'string',
+        'title' => 'string',
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'video_width' => 'integer',
+        'video_height' => 'integer',
+        'video_duration' => 'integer',
+        'description' => 'string',
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+    ];
 }

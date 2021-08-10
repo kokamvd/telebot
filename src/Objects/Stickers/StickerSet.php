@@ -17,15 +17,12 @@ use WeStacks\TeleBot\Objects\PhotoSize;
  */
 class StickerSet extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'name' => 'string',
-            'title' => 'string',
-            'is_animated' => 'boolean',
-            'contains_masks' => 'boolean',
-            'stickers' => [Sticker::class],
-            'thumb' => PhotoSize::class,
-        ];
-    }
+    protected $relations = [
+        'name' => 'string',
+        'title' => 'string',
+        'is_animated' => 'boolean',
+        'contains_masks' => 'boolean',
+        'stickers' => [Sticker::class],
+        'thumb' => PhotoSize::class,
+    ];
 }

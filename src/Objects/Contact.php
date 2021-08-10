@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Contact extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'phone_number' => 'string',
-            'first_name' => 'string',
-            'last_name' => 'string',
-            'user_id' => 'integer',
-            'vcard' => 'string',
-        ];
-    }
+    protected $relations = [
+        'phone_number' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'user_id' => 'integer',
+        'vcard' => 'string',
+    ];
 }

@@ -17,16 +17,13 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Venue extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'location' => Location::class,
-            'title' => 'string',
-            'address' => 'string',
-            'foursquare_id' => 'string',
-            'foursquare_type' => 'string',
-            'google_place_id' => 'string',
-            'google_place_type' => 'string',
-        ];
-    }
+    protected $relations = [
+        'location' => Location::class,
+        'title' => 'string',
+        'address' => 'string',
+        'foursquare_id' => 'string',
+        'foursquare_type' => 'string',
+        'google_place_id' => 'string',
+        'google_place_type' => 'string',
+    ];
 }

@@ -27,23 +27,20 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InlineQueryResultDocument extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'title' => 'string',
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'document_url' => 'string',
-            'mime_type' => 'string',
-            'description' => 'string',
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-            'thumb_url' => 'string',
-            'thumb_width' => 'string',
-            'thumb_height' => 'string',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'title' => 'string',
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'document_url' => 'string',
+        'mime_type' => 'string',
+        'description' => 'string',
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+        'thumb_url' => 'string',
+        'thumb_width' => 'string',
+        'thumb_height' => 'string',
+    ];
 }

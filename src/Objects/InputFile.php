@@ -8,14 +8,12 @@ class InputFile
 {
     /**
      * File name.
-     *
      * @var null|string
      */
     protected $filename;
 
     /**
      * File contents.
-     *
      * @var bool|resource|string
      */
     protected $contents;

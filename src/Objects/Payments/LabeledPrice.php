@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class LabeledPrice extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'label' => 'string',
-            'amount' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'label' => 'string',
+        'amount' => 'integer',
+    ];
 }

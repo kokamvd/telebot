@@ -14,23 +14,20 @@ use WeStacks\TeleBot\Objects\InputMessageContent\InputVenueMessageContent;
  */
 abstract class InputMessageContent extends TelegramObject
 {
+    private static $types = [
+        'message_text' => InputTextMessageContent::class,
+        'address' => InputVenueMessageContent::class,
+        'latitude' => InputLocationMessageContent::class,
+        'phone_number' => InputContactMessageContent::class,
+    ];
+
     public static function create($object)
     {
-        if (is_object($object)) {
-            $object = (array) $object;
-        }
+        $object = (array) $object;
 
-        if (isset($object['message_text'])) {
-            return new InputTextMessageContent($object);
-        }
-        if (isset($object['address'])) {
-            return new InputVenueMessageContent($object);
-        }
-        if (isset($object['latitude'])) {
-            return new InputLocationMessageContent($object);
-        }
-        if (isset($object['phone_number'])) {
-            return new InputContactMessageContent($object);
+        foreach (static::$types as $type => $class) {
+            if (!isset($object[$type])) continue;
+            return new $class($object);
         }
 
         throw TeleBotObjectException::uncastableType(static::class, gettype($object));

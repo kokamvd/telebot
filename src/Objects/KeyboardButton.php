@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class KeyboardButton extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'text' => 'string',
-            'request_contact' => 'boolean',
-            'request_location' => 'boolean',
-            'request_poll' => KeyboardButtonPollType::class,
-        ];
-    }
+    protected $relations = [
+        'text' => 'string',
+        'request_contact' => 'boolean',
+        'request_location' => 'boolean',
+        'request_poll' => KeyboardButtonPollType::class,
+    ];
 }

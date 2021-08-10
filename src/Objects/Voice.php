@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Voice extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'duration' => 'integer',
-            'mime_type' => 'string',
-            'file_size' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'duration' => 'integer',
+        'mime_type' => 'string',
+        'file_size' => 'integer',
+    ];
 }

@@ -27,24 +27,21 @@ use WeStacks\TeleBot\Objects\Keyboard\InlineKeyboardMarkup;
  */
 class InlineQueryResultVenue extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'latitude' => 'float',
-            'longitude' => 'float',
-            'title' => 'string',
-            'address' => 'string',
-            'foursquare_id' => 'string',
-            'foursquare_type' => 'string',
-            'google_place_id' => 'string',
-            'google_place_type' => 'string',
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-            'thumb_url' => 'string',
-            'thumb_width' => 'integer',
-            'thumb_height' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'title' => 'string',
+        'address' => 'string',
+        'foursquare_id' => 'string',
+        'foursquare_type' => 'string',
+        'google_place_id' => 'string',
+        'google_place_type' => 'string',
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+        'thumb_url' => 'string',
+        'thumb_width' => 'integer',
+        'thumb_height' => 'integer',
+    ];
 }

@@ -21,19 +21,16 @@ use WeStacks\TeleBot\Objects\PhotoSize;
  */
 class Sticker extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'width' => 'integer',
-            'height' => 'integer',
-            'is_animated' => 'boolean',
-            'thumb' => PhotoSize::class,
-            'emoji' => 'string',
-            'set_name' => 'string',
-            'mask_position' => MaskPosition::class,
-            'file_size' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'width' => 'integer',
+        'height' => 'integer',
+        'is_animated' => 'boolean',
+        'thumb' => PhotoSize::class,
+        'emoji' => 'string',
+        'set_name' => 'string',
+        'mask_position' => MaskPosition::class,
+        'file_size' => 'integer',
+    ];
 }

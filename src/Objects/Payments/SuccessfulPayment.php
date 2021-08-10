@@ -17,16 +17,13 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class SuccessfulPayment extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'currency' => 'string',
-            'total_amount' => 'integer',
-            'invoice_payload' => 'string',
-            'shipping_option_id' => 'string',
-            'order_info' => OrderInfo::class,
-            'telegram_payment_charge_id' => 'string',
-            'provider_payment_charge_id' => 'string',
-        ];
-    }
+    protected $relations = [
+        'currency' => 'string',
+        'total_amount' => 'integer',
+        'invoice_payload' => 'string',
+        'shipping_option_id' => 'string',
+        'order_info' => OrderInfo::class,
+        'telegram_payment_charge_id' => 'string',
+        'provider_payment_charge_id' => 'string',
+    ];
 }

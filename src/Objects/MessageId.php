@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class MessageId extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'message_id' => 'string',
-        ];
-    }
+    protected $relations = [
+        'message_id' => 'string',
+    ];
 }

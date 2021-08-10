@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChosenInlineResult extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'result_id' => 'string',
-            'from' => User::class,
-            'location' => Location::class,
-            'inline_message_id' => 'string',
-            'query' => 'string',
-        ];
-    }
+    protected $relations = [
+        'result_id' => 'string',
+        'from' => User::class,
+        'location' => Location::class,
+        'inline_message_id' => 'string',
+        'query' => 'string',
+    ];
 }

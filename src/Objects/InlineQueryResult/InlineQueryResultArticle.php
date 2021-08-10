@@ -23,20 +23,17 @@ use WeStacks\TeleBot\Objects\Keyboard\InlineKeyboardMarkup;
  */
 class InlineQueryResultArticle extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'title' => 'string',
-            'input_message_content' => InputMessageContent::class,
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'url' => 'string',
-            'hide_url' => 'boolean',
-            'description' => 'string',
-            'thumb_url' => 'string',
-            'thumb_width' => 'integer',
-            'thumb_height' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'title' => 'string',
+        'input_message_content' => InputMessageContent::class,
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'url' => 'string',
+        'hide_url' => 'boolean',
+        'description' => 'string',
+        'thumb_url' => 'string',
+        'thumb_width' => 'integer',
+        'thumb_height' => 'integer',
+    ];
 }

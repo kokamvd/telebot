@@ -18,17 +18,14 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class WebhookInfo extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'url' => 'string',
-            'has_custom_certificate' => 'boolean',
-            'pending_update_count' => 'integer',
-            'ip_address' => 'string',
-            'last_error_date' => 'integer',
-            'last_error_message' => 'string',
-            'max_connections' => 'integer',
-            'allowed_updates' => ['string'],
-        ];
-    }
+    protected $relations = [
+        'url' => 'string',
+        'has_custom_certificate' => 'boolean',
+        'pending_update_count' => 'integer',
+        'ip_address' => 'string',
+        'last_error_date' => 'integer',
+        'last_error_message' => 'string',
+        'max_connections' => 'integer',
+        'allowed_updates' => ['string'],
+    ];
 }

@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class OrderInfo extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'name' => 'string',
-            'phone_number' => 'string',
-            'email' => 'string',
-            'shipping_address' => ShippingAddress::class,
-        ];
-    }
+    protected $relations = [
+        'name' => 'string',
+        'phone_number' => 'string',
+        'email' => 'string',
+        'shipping_address' => ShippingAddress::class,
+    ];
 }

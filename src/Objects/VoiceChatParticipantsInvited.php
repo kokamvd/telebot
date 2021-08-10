@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class VoiceChatParticipantsInvited extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'users' => array(User::class),
-        ];
-    }
+    protected $relations = [
+        'users' => [ User::class ]
+    ];
 }

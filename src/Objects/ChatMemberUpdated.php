@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChatMemberUpdated extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'chat' => Chat::class,
-            'from' => User::class,
-            'date' => 'integer',
-            'old_chat_member' => ChatMember::class,
-            'new_chat_member' => ChatMember::class,
-            'invite_link' => ChatInviteLink::class,
-        ];
-    }
+    protected $relations = [
+        'chat' => Chat::class,
+        'from' => User::class,
+        'date' => 'integer',
+        'old_chat_member' => ChatMember::class,
+        'new_chat_member' => ChatMember::class,
+        'invite_link' => ChatInviteLink::class,
+    ];
 }

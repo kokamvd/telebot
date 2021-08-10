@@ -9,10 +9,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class VoiceChatScheduled extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'start_date' => 'integer'
-        ];
-    }
+    protected $relations = [
+        'start_date' => 'integer'
+    ];
 }

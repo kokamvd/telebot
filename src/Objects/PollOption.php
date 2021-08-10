@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class PollOption extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'text' => 'string',
-            'voter_count' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'text' => 'string',
+        'voter_count' => 'integer',
+    ];
 }

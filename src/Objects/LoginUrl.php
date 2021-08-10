@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class LoginUrl extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'url' => 'string',
-            'forward_text' => 'string',
-            'bot_username' => 'string',
-            'request_write_access' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'url' => 'string',
+        'forward_text' => 'string',
+        'bot_username' => 'string',
+        'request_write_access' => 'boolean',
+    ];
 }

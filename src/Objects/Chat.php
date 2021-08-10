@@ -27,26 +27,23 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Chat extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'integer',
-            'type' => 'string',
-            'title' => 'string',
-            'username' => 'string',
-            'first_name' => 'string',
-            'last_name' => 'string',
-            'photo' => ChatPhoto::class,
-            'bio' => 'string',
-            'description' => 'string',
-            'invite_link' => 'string',
-            'pinned_message' => Message::class,
-            'permissions' => ChatPermissions::class,
-            'slow_mode_delay' => 'integer',
-            'sticker_set_name' => 'string',
-            'can_set_sticker_set' => 'boolean',
-            'linked_chat_id' => 'integer',
-            'location' => ChatLocation::class,
-        ];
-    }
+    protected $relations = [
+        'id' => 'integer',
+        'type' => 'string',
+        'title' => 'string',
+        'username' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'photo' => ChatPhoto::class,
+        'bio' => 'string',
+        'description' => 'string',
+        'invite_link' => 'string',
+        'pinned_message' => Message::class,
+        'permissions' => ChatPermissions::class,
+        'slow_mode_delay' => 'integer',
+        'sticker_set_name' => 'string',
+        'can_set_sticker_set' => 'boolean',
+        'linked_chat_id' => 'integer',
+        'location' => ChatLocation::class,
+    ];
 }

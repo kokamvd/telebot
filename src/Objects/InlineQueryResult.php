@@ -30,68 +30,49 @@ use WeStacks\TeleBot\Objects\InlineQueryResult\InlineQueryResultVoice;
  */
 abstract class InlineQueryResult extends TelegramObject
 {
-    /**
-     * Create new object instance.
-     *
-     * @param mixed $object
-     *
-     * @return static
-     */
+    private static $types = [
+        'default' => [
+            'article' => InlineQueryResultArticle::class,
+            'photo' => InlineQueryResultPhoto::class,
+            'gif' => InlineQueryResultGif::class,
+            'mpeg4_gif' => InlineQueryResultMpeg4Gif::class,
+            'video' => InlineQueryResultVideo::class,
+            'audio' => InlineQueryResultAudio::class,
+            'voice' => InlineQueryResultVoice::class,
+            'document' => InlineQueryResultDocument::class,
+            'location' => InlineQueryResultLocation::class,
+            'venue' => InlineQueryResultVenue::class,
+            'contact' => InlineQueryResultContact::class,
+            'game' => InlineQueryResultGame::class,
+        ],
+        'cached' => [
+            'photo' => InlineQueryResultCachedPhoto::class,
+            'gif' => InlineQueryResultCachedGif::class,
+            'mpeg4_gif' => InlineQueryResultCachedMpeg4Gif::class,
+            'sticker' => InlineQueryResultCachedSticker::class,
+            'document' => InlineQueryResultCachedDocument::class,
+            'video' => InlineQueryResultCachedVideo::class,
+            'voice' => InlineQueryResultCachedVoice::class,
+            'audio' => InlineQueryResultCachedAudio::class,
+        ],
+    ];
+
     public static function create($object)
     {
-        $types = static::types();
+        $object = (array) $object;
         $key = static::isCached($object) ? 'cached' : 'default';
-        $type = $object->type ?? $object['type'] ?? '__undefined';
+        $type = $object['type'] ?? null;
+        $class = static::$types[$key][$type] ?? null;
 
-        $type = $types[$key][$type] ?? null;
-
-        if ($type) {
-            return new $type($object);
+        if ($class) {
+            return new $class($object);
         }
 
         throw TeleBotObjectException::uncastableType(static::class, gettype($object));
     }
 
-    private static function types()
-    {
-        return [
-            'default' => [
-                'article' => InlineQueryResultArticle::class,
-                'photo' => InlineQueryResultPhoto::class,
-                'gif' => InlineQueryResultGif::class,
-                'mpeg4_gif' => InlineQueryResultMpeg4Gif::class,
-                'video' => InlineQueryResultVideo::class,
-                'audio' => InlineQueryResultAudio::class,
-                'voice' => InlineQueryResultVoice::class,
-                'document' => InlineQueryResultDocument::class,
-                'location' => InlineQueryResultLocation::class,
-                'venue' => InlineQueryResultVenue::class,
-                'contact' => InlineQueryResultContact::class,
-                'game' => InlineQueryResultGame::class,
-            ],
-            'cached' => [
-                'photo' => InlineQueryResultCachedPhoto::class,
-                'gif' => InlineQueryResultCachedGif::class,
-                'mpeg4_gif' => InlineQueryResultCachedMpeg4Gif::class,
-                'sticker' => InlineQueryResultCachedSticker::class,
-                'document' => InlineQueryResultCachedDocument::class,
-                'video' => InlineQueryResultCachedVideo::class,
-                'voice' => InlineQueryResultCachedVoice::class,
-                'audio' => InlineQueryResultCachedAudio::class,
-            ],
-        ];
-    }
-
     private static function isCached($object)
     {
-        if (!is_array($object) && !is_object($object)) {
-            return false;
-        }
-
-        if (is_object($object)) {
-            $object = (array) $object;
-        }
-
         foreach (array_keys($object) as $key) {
             if (false !== strpos($key, 'file_id')) {
                 return true;

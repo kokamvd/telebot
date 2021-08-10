@@ -21,6 +21,13 @@ abstract class TelegramObject implements IteratorAggregate
     protected $properties;
 
     /**
+     * Array representation of given object properties, where `$key` - is property name and `$value` - property type.
+     *
+     * @var array
+     */
+    protected $relations = [];
+
+    /**
      * Create new Telegram object instance.
      *
      * @param array|object $object
@@ -29,7 +36,7 @@ abstract class TelegramObject implements IteratorAggregate
      */
     public function __construct($object)
     {
-        $this->properties = TypeCaster::castValues($object, $this->relations());
+        $this->properties = TypeCaster::castValues($object, $this->relations);
     }
 
     public function __get($key)
@@ -87,7 +94,7 @@ abstract class TelegramObject implements IteratorAggregate
     }
 
     /**
-     * Get associative array representation of this object.
+     * Get json representation of this object.
      *
      * @return string
      */
@@ -143,13 +150,6 @@ abstract class TelegramObject implements IteratorAggregate
     {
         return new ArrayIterator($this->properties);
     }
-
-    /**
-     * This function should return an array representation of given object properties, where `$key` - is property name and `$value` - property type.
-     *
-     * @return array
-     */
-    abstract protected function relations();
 
     /**
      * Try to dive `$data` into the `$key` property / array key.

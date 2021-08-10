@@ -19,18 +19,15 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Audio extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'duration' => 'integer',
-            'performer' => 'string',
-            'title' => 'string',
-            'file_name' => 'string',
-            'mime_type' => 'string',
-            'file_size' => 'integer',
-            'thumb' => PhotoSize::class,
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'duration' => 'integer',
+        'performer' => 'string',
+        'title' => 'string',
+        'file_name' => 'string',
+        'mime_type' => 'string',
+        'file_size' => 'integer',
+        'thumb' => PhotoSize::class,
+    ];
 }

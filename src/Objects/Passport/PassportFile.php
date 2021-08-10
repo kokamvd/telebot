@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class PassportFile extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'file_size' => 'integer',
-            'file_date' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'file_size' => 'integer',
+        'file_date' => 'integer',
+    ];
 }

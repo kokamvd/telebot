@@ -17,16 +17,13 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class CallbackQuery extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'string',
-            'from' => User::class,
-            'message' => Message::class,
-            'inline_message_id' => 'string',
-            'chat_instance' => 'string',
-            'data' => 'string',
-            'game_short_name' => 'string',
-        ];
-    }
+    protected $relations = [
+        'id' => 'string',
+        'from' => User::class,
+        'message' => Message::class,
+        'inline_message_id' => 'string',
+        'chat_instance' => 'string',
+        'data' => 'string',
+        'game_short_name' => 'string',
+    ];
 }

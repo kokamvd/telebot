@@ -17,14 +17,11 @@ use WeStacks\TeleBot\Objects\Keyboard\InlineKeyboardMarkup;
  */
 class InlineQueryResultCachedSticker extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'sticker_file_id' => 'string',
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'sticker_file_id' => 'string',
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+    ];
 }

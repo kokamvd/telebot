@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Invoice extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'title' => 'string',
-            'description' => 'string',
-            'start_parameter' => 'string',
-            'currency' => 'string',
-            'total_amount' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'title' => 'string',
+        'description' => 'string',
+        'start_parameter' => 'string',
+        'currency' => 'string',
+        'total_amount' => 'integer',
+    ];
 }

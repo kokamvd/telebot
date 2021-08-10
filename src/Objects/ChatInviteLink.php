@@ -17,15 +17,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChatInviteLink extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'invite_link' => 'string',
-            'creator' => User::class,
-            'is_primary' => 'boolean',
-            'is_revoked' => 'boolean',
-            'expire_date' => 'integer',
-            'member_limit' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'invite_link' => 'string',
+        'creator' => User::class,
+        'is_primary' => 'boolean',
+        'is_revoked' => 'boolean',
+        'expire_date' => 'integer',
+        'member_limit' => 'integer',
+    ];
 }

@@ -23,22 +23,19 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Poll extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'string',
-            'question' => 'string',
-            'options' => [PollOption::class],
-            'total_voter_count' => 'integer',
-            'is_closed' => 'boolean',
-            'is_anonymous' => 'boolean',
-            'type' => 'string',
-            'allows_multiple_answers' => 'boolean',
-            'correct_option_id' => 'integer',
-            'explanation' => 'string',
-            'explanation_entities' => [MessageEntity::class],
-            'open_period' => 'integer',
-            'close_date' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'id' => 'string',
+        'question' => 'string',
+        'options' => [PollOption::class],
+        'total_voter_count' => 'integer',
+        'is_closed' => 'boolean',
+        'is_anonymous' => 'boolean',
+        'type' => 'string',
+        'allows_multiple_answers' => 'boolean',
+        'correct_option_id' => 'integer',
+        'explanation' => 'string',
+        'explanation_entities' => [MessageEntity::class],
+        'open_period' => 'integer',
+        'close_date' => 'integer',
+    ];
 }

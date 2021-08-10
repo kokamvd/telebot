@@ -19,17 +19,14 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Video extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'width' => 'integer',
-            'height' => 'integer',
-            'duration' => 'integer',
-            'thumb' => PhotoSize::class,
-            'mime_type' => 'string',
-            'file_size' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'width' => 'integer',
+        'height' => 'integer',
+        'duration' => 'integer',
+        'thumb' => PhotoSize::class,
+        'mime_type' => 'string',
+        'file_size' => 'integer',
+    ];
 }

@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChatPhoto extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'small_file_id' => 'string',
-            'small_file_unique_id' => 'string',
-            'big_file_id' => 'string',
-            'big_file_unique_id' => 'string',
-        ];
-    }
+    protected $relations = [
+        'small_file_id' => 'string',
+        'small_file_unique_id' => 'string',
+        'big_file_id' => 'string',
+        'big_file_unique_id' => 'string',
+    ];
 }

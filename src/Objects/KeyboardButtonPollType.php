@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class KeyboardButtonPollType extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+    ];
 }

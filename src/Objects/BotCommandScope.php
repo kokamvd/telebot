@@ -17,37 +17,26 @@ use WeStacks\TeleBot\Objects\BotCommandScope\BotCommandScopeDefault;
  */
 abstract class BotCommandScope extends TelegramObject
 {
-    /**
-     * Create new object instance.
-     *
-     * @param mixed $object
-     *
-     * @return static
-     */
+    private static $types = [
+        'default' => BotCommandScopeDefault::class,
+        'all_private_chats' => BotCommandScopeAllPrivateChats::class,
+        'all_group_chats' => BotCommandScopeAllGroupChats::class,
+        'all_chat_administrators' => BotCommandScopeAllChatAdministrators::class,
+        'chat' => BotCommandScopeChat::class,
+        'chat_administrators' => BotCommandScopeChatAdministrators::class,
+        'chat_member' => BotCommandScopeChatMember::class,
+    ];
+
     public static function create($object)
     {
-        $types = static::types();
-        $type = $object->type ?? $object['type'] ?? '__undefined';
+        $object = (array) $object;
+        $type = $object['type'] ?? null;
+        $class = static::$types[$type] ?? null;
 
-        $type = $types[$type] ?? null;
-
-        if ($type) {
-            return new $type($object);
+        if ($class) {
+            return new $class($object);
         }
 
         throw TeleBotObjectException::uncastableType(static::class, gettype($object));
-    }
-
-    private static function types()
-    {
-        return [
-            'default' => BotCommandScopeDefault::class,
-            'all_private_chats' => BotCommandScopeAllPrivateChats::class,
-            'all_group_chats' => BotCommandScopeAllGroupChats::class,
-            'all_chat_administrators' => BotCommandScopeAllChatAdministrators::class,
-            'chat' => BotCommandScopeChat::class,
-            'chat_administrators' => BotCommandScopeChatAdministrators::class,
-            'chat_member' => BotCommandScopeChatMember::class,
-        ];
     }
 }

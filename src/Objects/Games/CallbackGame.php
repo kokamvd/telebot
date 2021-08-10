@@ -9,9 +9,5 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class CallbackGame extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-        ];
-    }
+    //
 }

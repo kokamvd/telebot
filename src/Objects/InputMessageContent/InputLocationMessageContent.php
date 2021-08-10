@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Objects\InputMessageContent;
  */
 class InputLocationMessageContent extends InputMessageContent
 {
-    protected function relations()
-    {
-        return [
-            'latitude' => 'float',
-            'longitude' => 'float',
-            'horizontal_accuracy' => 'float',
-            'live_period' => 'integer',
-            'heading' => 'integer',
-            'proximity_alert_radius' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'horizontal_accuracy' => 'float',
+        'live_period' => 'integer',
+        'heading' => 'integer',
+        'proximity_alert_radius' => 'integer',
+    ];
 }

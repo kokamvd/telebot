@@ -21,18 +21,15 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InputMediaAudio extends InputMedia
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'media' => InputFile::class,
-            'thumb' => InputFile::class,
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'duration' => 'integer',
-            'performer' => 'string',
-            'title' => 'string',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'media' => InputFile::class,
+        'thumb' => InputFile::class,
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'duration' => 'integer',
+        'performer' => 'string',
+        'title' => 'string',
+    ];
 }

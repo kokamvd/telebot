@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class MessageAutoDeleteTimerChanged extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'message_auto_delete_time' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'message_auto_delete_time' => 'integer',
+    ];
 }

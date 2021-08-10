@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Location extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'longitude' => 'float',
-            'latitude' => 'float',
-            'horizontal_accuracy' => 'float',
-            'live_period' => 'integer',
-            'heading' => 'integer',
-            'proximity_alert_radius' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'longitude' => 'float',
+        'latitude' => 'float',
+        'horizontal_accuracy' => 'float',
+        'live_period' => 'integer',
+        'heading' => 'integer',
+        'proximity_alert_radius' => 'integer',
+    ];
 }

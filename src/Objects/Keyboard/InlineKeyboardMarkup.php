@@ -12,10 +12,7 @@ use WeStacks\TeleBot\Objects\Keyboard;
  */
 class InlineKeyboardMarkup extends Keyboard
 {
-    protected function relations()
-    {
-        return [
-            'inline_keyboard' => [[InlineKeyboardButton::class]],
-        ];
-    }
+    protected $relations = [
+        'inline_keyboard' => [[InlineKeyboardButton::class]],
+    ];
 }

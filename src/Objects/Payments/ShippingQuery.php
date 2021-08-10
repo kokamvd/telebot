@@ -15,13 +15,10 @@ use WeStacks\TeleBot\Objects\User;
  */
 class ShippingQuery extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'string',
-            'from' => User::class,
-            'invoice_payload' => 'string',
-            'shipping_address' => ShippingAddress::class,
-        ];
-    }
+    protected $relations = [
+        'id' => 'string',
+        'from' => User::class,
+        'invoice_payload' => 'string',
+        'shipping_address' => ShippingAddress::class,
+    ];
 }

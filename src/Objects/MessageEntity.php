@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class MessageEntity extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'offset' => 'integer',
-            'length' => 'integer',
-            'url' => 'string',
-            'user' => User::class,
-            'language' => 'string',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'offset' => 'integer',
+        'length' => 'integer',
+        'url' => 'string',
+        'user' => User::class,
+        'language' => 'string',
+    ];
 }

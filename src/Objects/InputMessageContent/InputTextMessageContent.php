@@ -15,13 +15,10 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InputTextMessageContent extends InputMessageContent
 {
-    protected function relations()
-    {
-        return [
-            'message_text' => 'string',
-            'parse_mode' => 'string',
-            'entities' => [MessageEntity::class],
-            'disable_web_page_preview' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'message_text' => 'string',
+        'parse_mode' => 'string',
+        'entities' => [MessageEntity::class],
+        'disable_web_page_preview' => 'boolean',
+    ];
 }

@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ChatLocation extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'location' => Location::class,
-            'address' => 'string',
-        ];
-    }
+    protected $relations = [
+        'location' => Location::class,
+        'address' => 'string',
+    ];
 }

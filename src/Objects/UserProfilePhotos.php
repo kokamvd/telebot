@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class UserProfilePhotos extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'total_count' => 'integer',
-            'photos' => [[PhotoSize::class]],
-        ];
-    }
+    protected $relations = [
+        'total_count' => 'integer',
+        'photos' => [[PhotoSize::class]],
+    ];
 }

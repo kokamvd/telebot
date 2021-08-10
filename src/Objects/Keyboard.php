@@ -14,23 +14,20 @@ use WeStacks\TeleBot\Objects\Keyboard\ReplyKeyboardRemove;
  */
 abstract class Keyboard extends TelegramObject
 {
+    private static $types = [
+        'inline_keyboard' => InlineKeyboardMarkup::class,
+        'keyboard' => ReplyKeyboardMarkup::class,
+        'remove_keyboard' => ReplyKeyboardRemove::class,
+        'force_reply' => ForceReply::class,
+    ];
+
     public static function create($object)
     {
-        if (is_object($object)) {
-            $object = (array) $object;
-        }
+        $object = (array) $object;
 
-        if (isset($object['inline_keyboard'])) {
-            return new InlineKeyboardMarkup($object);
-        }
-        if (isset($object['keyboard'])) {
-            return new ReplyKeyboardMarkup($object);
-        }
-        if (isset($object['remove_keyboard'])) {
-            return new ReplyKeyboardRemove($object);
-        }
-        if (isset($object['force_reply'])) {
-            return new ForceReply($object);
+        foreach (static::$types as $type => $class) {
+            if (!isset($object[$type])) continue;
+            return new $class($object);
         }
 
         throw TeleBotObjectException::uncastableType(static::class, gettype($object));

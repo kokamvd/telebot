@@ -9,10 +9,5 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class VoiceChatStarted extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            //
-        ];
-    }
+    //
 }

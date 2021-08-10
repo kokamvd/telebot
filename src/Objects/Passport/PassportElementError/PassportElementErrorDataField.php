@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Objects\Passport\PassportElementError;
  */
 class PassportElementErrorDataField extends PassportElementError
 {
-    protected function relations()
-    {
-        return [
-            'source' => 'string',
-            'type' => 'string',
-            'field_name' => 'string',
-            'data_hash' => 'string',
-            'message' => 'string',
-        ];
-    }
+    protected $relations = [
+        'source' => 'string',
+        'type' => 'string',
+        'field_name' => 'string',
+        'data_hash' => 'string',
+        'message' => 'string',
+    ];
 }

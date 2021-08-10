@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ResponseParameters extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'migrate_to_chat_id' => 'integer',
-            'retry_after' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'migrate_to_chat_id' => 'integer',
+        'retry_after' => 'integer',
+    ];
 }

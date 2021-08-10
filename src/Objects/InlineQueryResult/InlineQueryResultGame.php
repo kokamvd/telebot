@@ -15,13 +15,10 @@ use WeStacks\TeleBot\Objects\Keyboard\InlineKeyboardMarkup;
  */
 class InlineQueryResultGame extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'game_short_name' => 'string',
-            'reply_markup' => InlineKeyboardMarkup::class,
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'game_short_name' => 'string',
+        'reply_markup' => InlineKeyboardMarkup::class,
+    ];
 }

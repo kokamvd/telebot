@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Dice extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'emoji' => 'string',
-            'value' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'emoji' => 'string',
+        'value' => 'integer',
+    ];
 }

@@ -19,39 +19,28 @@ use WeStacks\TeleBot\Objects\Passport\PassportElementError\PassportElementErrorU
  */
 abstract class PassportElementError extends TelegramObject
 {
-    /**
-     * Create new object instance.
-     *
-     * @param mixed $object
-     *
-     * @return static
-     */
+    private static $types = [
+        'data' => PassportElementErrorDataField::class,
+        'front_side' => PassportElementErrorFrontSide::class,
+        'reverse_side' => PassportElementErrorReverseSide::class,
+        'selfie' => PassportElementErrorSelfie::class,
+        'file' => PassportElementErrorFile::class,
+        'files' => PassportElementErrorFiles::class,
+        'translation_file' => PassportElementErrorTranslationFile::class,
+        'translation_files' => PassportElementErrorTranslationFiles::class,
+        'unspecified' => PassportElementErrorUnspecified::class,
+    ];
+
     public static function create($object)
     {
-        $types = static::types();
-        $type = $object->source ?? $object['source'] ?? '__undefined';
+        $object = (array) $object;
+        $type = $object['source'] ?? null;
+        $class = static::$types[$type] ?? null;
 
-        $type = $types[$type] ?? null;
-
-        if ($type) {
-            return new $type($object);
+        if ($class) {
+            return new $class($object);
         }
 
         throw TeleBotObjectException::uncastableType(static::class, gettype($object));
-    }
-
-    private static function types()
-    {
-        return [
-            'data' => PassportElementErrorDataField::class,
-            'front_side' => PassportElementErrorFrontSide::class,
-            'reverse_side' => PassportElementErrorReverseSide::class,
-            'selfie' => PassportElementErrorSelfie::class,
-            'file' => PassportElementErrorFile::class,
-            'files' => PassportElementErrorFiles::class,
-            'translation_file' => PassportElementErrorTranslationFile::class,
-            'translation_files' => PassportElementErrorTranslationFiles::class,
-            'unspecified' => PassportElementErrorUnspecified::class,
-        ];
     }
 }

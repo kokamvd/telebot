@@ -15,14 +15,11 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class PhotoSize extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'width' => 'integer',
-            'height' => 'integer',
-            'file_size' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'width' => 'integer',
+        'height' => 'integer',
+        'file_size' => 'integer',
+    ];
 }

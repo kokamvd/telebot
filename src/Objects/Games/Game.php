@@ -19,15 +19,12 @@ use WeStacks\TeleBot\Objects\PhotoSize;
  */
 class Game extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'title' => 'string',
-            'description' => 'string',
-            'photo' => [PhotoSize::class],
-            'text' => 'string',
-            'text_entities' => [MessageEntity::class],
-            'animation' => Animation::class,
-        ];
-    }
+    protected $relations = [
+        'title' => 'string',
+        'description' => 'string',
+        'photo' => [PhotoSize::class],
+        'text' => 'string',
+        'text_entities' => [MessageEntity::class],
+        'animation' => Animation::class,
+    ];
 }

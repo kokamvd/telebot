@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class MaskPosition extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'point' => 'string',
-            'x_shift' => 'float',
-            'y_shift' => 'float',
-            'scale' => 'float',
-        ];
-    }
+    protected $relations = [
+        'point' => 'string',
+        'x_shift' => 'float',
+        'y_shift' => 'float',
+        'scale' => 'float',
+    ];
 }

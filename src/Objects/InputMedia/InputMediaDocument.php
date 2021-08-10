@@ -19,16 +19,13 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InputMediaDocument extends InputMedia
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'media' => InputFile::class,
-            'thumb' => InputFile::class,
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'disable_content_type_detection' => 'boolean'
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'media' => InputFile::class,
+        'thumb' => InputFile::class,
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'disable_content_type_detection' => 'boolean'
+    ];
 }

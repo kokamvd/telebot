@@ -19,17 +19,14 @@ use WeStacks\TeleBot\Objects\Games\CallbackGame;
  */
 class InlineKeyboardButton extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'text' => 'string',
-            'url' => 'string',
-            'login_url' => LoginUrl::class,
-            'callback_data' => 'string',
-            'switch_inline_query' => 'string',
-            'switch_inline_query_current_chat' => 'string',
-            'callback_game' => CallbackGame::class,
-            'pay' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'text' => 'string',
+        'url' => 'string',
+        'login_url' => LoginUrl::class,
+        'callback_data' => 'string',
+        'switch_inline_query' => 'string',
+        'switch_inline_query_current_chat' => 'string',
+        'callback_game' => CallbackGame::class,
+        'pay' => 'boolean',
+    ];
 }

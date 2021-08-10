@@ -13,12 +13,9 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class EncryptedCredentials extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'data' => 'string',
-            'hash' => 'string',
-            'secret' => 'string',
-        ];
-    }
+    protected $relations = [
+        'data' => 'string',
+        'hash' => 'string',
+        'secret' => 'string',
+    ];
 }

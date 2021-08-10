@@ -14,13 +14,10 @@ use WeStacks\TeleBot\Objects\Passport\PassportElementError;
  */
 class PassportElementErrorTranslationFile extends PassportElementError
 {
-    protected function relations()
-    {
-        return [
-            'source' => 'string',
-            'type' => 'string',
-            'file_hash' => 'string',
-            'message' => 'string',
-        ];
-    }
+    protected $relations = [
+        'source' => 'string',
+        'type' => 'string',
+        'file_hash' => 'string',
+        'message' => 'string',
+    ];
 }

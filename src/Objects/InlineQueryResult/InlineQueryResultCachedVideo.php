@@ -23,19 +23,16 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InlineQueryResultCachedVideo extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'video_file_id' => 'string',
-            'title' => 'string',
-            'description' => 'string',
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'video_file_id' => 'string',
+        'title' => 'string',
+        'description' => 'string',
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+    ];
 }

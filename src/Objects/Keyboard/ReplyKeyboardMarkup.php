@@ -16,14 +16,11 @@ use WeStacks\TeleBot\Objects\KeyboardButton;
  */
 class ReplyKeyboardMarkup extends Keyboard
 {
-    protected function relations()
-    {
-        return [
-            'keyboard' => [[KeyboardButton::class]],
-            'resize_keyboard' => 'boolean',
-            'one_time_keyboard' => 'boolean',
-            'input_field_placeholder' => 'string',
-            'selective' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'keyboard' => [[KeyboardButton::class]],
+        'resize_keyboard' => 'boolean',
+        'one_time_keyboard' => 'boolean',
+        'input_field_placeholder' => 'string',
+        'selective' => 'boolean',
+    ];
 }

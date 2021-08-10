@@ -13,12 +13,9 @@ use WeStacks\TeleBot\Objects\BotCommandScope;
  */
 class BotCommandScopeChatMember extends BotCommandScope
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'chat_id' => 'string',
-            'user_id' => 'integer'
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'chat_id' => 'string',
+        'user_id' => 'integer'
+    ];
 }

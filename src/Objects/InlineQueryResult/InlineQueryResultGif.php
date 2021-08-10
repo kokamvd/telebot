@@ -27,23 +27,20 @@ use WeStacks\TeleBot\Objects\MessageEntity;
  */
 class InlineQueryResultGif extends InlineQueryResult
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'id' => 'string',
-            'gif_url' => 'string',
-            'gif_width' => 'integer',
-            'gif_height' => 'integer',
-            'gif_duration' => 'integer',
-            'thumb_url' => 'string',
-            'thumb_mime_type' => 'string',
-            'title' => 'string',
-            'caption' => 'string',
-            'parse_mode' => 'string',
-            'caption_entities' => [MessageEntity::class],
-            'reply_markup' => InlineKeyboardMarkup::class,
-            'input_message_content' => InputMessageContent::class,
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'id' => 'string',
+        'gif_url' => 'string',
+        'gif_width' => 'integer',
+        'gif_height' => 'integer',
+        'gif_duration' => 'integer',
+        'thumb_url' => 'string',
+        'thumb_mime_type' => 'string',
+        'title' => 'string',
+        'caption' => 'string',
+        'parse_mode' => 'string',
+        'caption_entities' => [MessageEntity::class],
+        'reply_markup' => InlineKeyboardMarkup::class,
+        'input_message_content' => InputMessageContent::class,
+    ];
 }

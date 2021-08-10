@@ -16,15 +16,12 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class Document extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'file_id' => 'string',
-            'file_unique_id' => 'string',
-            'thumb' => PhotoSize::class,
-            'file_name' => 'string',
-            'mime_type' => 'string',
-            'file_size' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'file_id' => 'string',
+        'file_unique_id' => 'string',
+        'thumb' => PhotoSize::class,
+        'file_name' => 'string',
+        'mime_type' => 'string',
+        'file_size' => 'integer',
+    ];
 }

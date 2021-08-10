@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Objects\BotCommandScope;
  */
 class BotCommandScopeAllGroupChats extends BotCommandScope
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string'
-        ];
-    }
+    protected $relations = [
+        'type' => 'string'
+    ];
 }

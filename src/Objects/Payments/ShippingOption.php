@@ -13,12 +13,9 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ShippingOption extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'id' => 'string',
-            'title' => 'string',
-            'prices' => [LabeledPrice::class],
-        ];
-    }
+    protected $relations = [
+        'id' => 'string',
+        'title' => 'string',
+        'prices' => [LabeledPrice::class],
+    ];
 }

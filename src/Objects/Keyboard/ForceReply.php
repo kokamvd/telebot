@@ -13,12 +13,9 @@ use WeStacks\TeleBot\Objects\Keyboard;
  */
 class ForceReply extends Keyboard
 {
-    protected function relations()
-    {
-        return [
-            'force_reply' => 'boolean',
-            'input_field_placeholder' => 'string',
-            'selective' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'force_reply' => 'boolean',
+        'input_field_placeholder' => 'string',
+        'selective' => 'boolean',
+    ];
 }

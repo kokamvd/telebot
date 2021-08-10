@@ -14,12 +14,9 @@ use WeStacks\TeleBot\Objects\User;
  */
 class GameHighScore extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'position' => 'integer',
-            'user' => User::class,
-            'score' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'position' => 'integer',
+        'user' => User::class,
+        'score' => 'integer',
+    ];
 }

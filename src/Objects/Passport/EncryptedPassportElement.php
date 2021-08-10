@@ -20,18 +20,15 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class EncryptedPassportElement extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'type' => 'string',
-            'data' => 'string',
-            'phone_number' => 'string',
-            'email' => 'string',
-            'files' => [PassportFile::class],
-            'front_side' => PassportFile::class,
-            'reverse_side' => PassportFile::class,
-            'translation' => [PassportFile::class],
-            'hash' => 'string',
-        ];
-    }
+    protected $relations = [
+        'type' => 'string',
+        'data' => 'string',
+        'phone_number' => 'string',
+        'email' => 'string',
+        'files' => [PassportFile::class],
+        'front_side' => PassportFile::class,
+        'reverse_side' => PassportFile::class,
+        'translation' => [PassportFile::class],
+        'hash' => 'string',
+    ];
 }

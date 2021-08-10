@@ -11,10 +11,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class VoiceChatEnded extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'duration' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'duration' => 'integer',
+    ];
 }

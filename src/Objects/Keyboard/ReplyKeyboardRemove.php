@@ -12,11 +12,8 @@ use WeStacks\TeleBot\Objects\Keyboard;
  */
 class ReplyKeyboardRemove extends Keyboard
 {
-    protected function relations()
-    {
-        return [
-            'remove_keyboard' => 'boolean',
-            'selective' => 'boolean',
-        ];
-    }
+    protected $relations = [
+        'remove_keyboard' => 'boolean',
+        'selective' => 'boolean',
+    ];
 }

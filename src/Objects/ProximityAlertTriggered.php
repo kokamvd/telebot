@@ -13,12 +13,9 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  */
 class ProximityAlertTriggered extends TelegramObject
 {
-    protected function relations()
-    {
-        return [
-            'traveler' => User::class,
-            'watcher' => User::class,
-            'distance' => 'integer',
-        ];
-    }
+    protected $relations = [
+        'traveler' => User::class,
+        'watcher' => User::class,
+        'distance' => 'integer',
+    ];
 }
