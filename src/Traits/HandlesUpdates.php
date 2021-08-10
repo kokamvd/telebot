@@ -15,7 +15,7 @@ trait HandlesUpdates
 {
     /**
      * Kernel of
-     * 
+     *
      * @var HandlerKernel
      */
     private $kernel;
@@ -78,7 +78,7 @@ trait HandlesUpdates
 
     /**
      * Get local bot instance commands registered by commands handlers.
-     * 
+     *
      * @param string $scope Commands scope.
      *
      * @return BotCommand[]
@@ -95,7 +95,7 @@ trait HandlesUpdates
 
     /**
      * Get scope with registered commands.
-     * 
+     *
      * @param string $scope Commands scope.
      *
      * @return BotCommand[]|BotCommand[][]|BotCommand[][][]

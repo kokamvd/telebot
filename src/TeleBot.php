@@ -25,7 +25,7 @@ use WeStacks\TeleBot\Objects\WebhookInfo;
 
 /**
  * This class represents a bot instance. This is basicaly main controller for sending and handling your Telegram requests.
- * 
+ *
  * @method Array<BotCommand>|false|PromiseInterface    getMyCommands()                                         Use this method to get the current list of the bot's commands. Requires no parameters. Returns Array of BotCommand on success.
  * @method Array<ChatMember>|false|PromiseInterface    getChatAdministrators(array $parameters = [])           Use this method to get a list of administrators in a chat. On success, returns an Array of ChatMember objects that contains information about all chat administrators except other bots. If the chat is a group or a supergroup and no administrators were appointed, only the creator will be returned.
  * @method Array<GameHighScore>|false|PromiseInterface getGameHighScores(array $parameters = [])               Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. On success, returns an Array of GameHighScore objects.
@@ -97,16 +97,16 @@ use WeStacks\TeleBot\Objects\WebhookInfo;
  * @method false|PromiseInterface|UserProfilePhotos    getUserProfilePhotos(array $parameters = [])            Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.
  * @method false|PromiseInterface|User                 getMe()                                                 A simple method for testing your bot's auth token. Requires no parameters. Returns basic information about the bot in form of a User object.
  * @method false|PromiseInterface|WebhookInfo          getWebhookInfo()                                        Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates, will return an object with the url field empty.
- * 
+ *
  * @method false|PromiseInterface|true                 close()                                                 Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters.
  * @method false|PromiseInterface|true                 logOut()                                                Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters.
  * @method false|PromiseInterface|MessageId            copyMessage(array $parameters = [])                     Use this method to copy messages of any kind. The method is analogous to the method forwardMessages, but the copied message doesn't have a link to the original message. Returns the MessageId of the sent message on success.
  * @method false|PromiseInterface|true                 unpinAllChatMessages(array $parameters = [])            Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success.
- * 
+ *
  * @method false|PromiseInterface|ChatInviteLink       createChatInviteLink(array $parameters = [])            Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object.
  * @method false|PromiseInterface|ChatInviteLink       editChatInviteLink(array $parameters = [])              Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object.
  * @method false|PromiseInterface|ChatInviteLink       revokeChatInviteLink(array $parameters = [])            Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the revoked invite link as ChatInviteLink object.
- * 
+ *
  * @property string $token Your telegram bot token.
  * @property string $api_url API URL which will be used by library's HTTP client.
  * @property bool $exceptions By default, bot throws TeleBotRequestException on telegram request errors. You may set this parameter false. In this case bot methods will return false instead of throwing exception.
@@ -218,7 +218,7 @@ class TeleBot
 
     /**
      * Get bot config
-     * @return mixed 
+     * @return mixed
      */
     public function getConfig()
     {

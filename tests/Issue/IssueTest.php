@@ -81,7 +81,7 @@ class IssueTest extends TestCase
                 // as we ask get method to throw exception if variable is undefined
                 $variant4 = $update->get('message.text', true);
                 // nullsafe operator is not works as text property is not null - it's undefined
-                $variant5 = $update?->message?->text; 
+                $variant5 = $update?->message?->text;
             } catch (\Exception $e) {
                 //
             }

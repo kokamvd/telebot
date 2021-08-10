@@ -13,7 +13,7 @@ use WeStacks\TeleBot\Interfaces\TelegramObject;
  * @property boolean        $is_revoked         True, if the link is revoked
  * @property integer        $expire_date        _Optional_. Point in time (Unix timestamp) when the link will expire or has been expired
  * @property integer        $member_limit	    _Optional_. Maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
- * 
+ *
  */
 class ChatInviteLink extends TelegramObject
 {

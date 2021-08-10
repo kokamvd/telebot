@@ -13,56 +13,56 @@ class HandlerKernel
 {
     /**
      * Array of update handlers.
-     * 
+     *
      * @var UpdateHandler[]
      */
     protected $handlers = [];
 
     /**
      * Array of bot commands with default scope. Default commands are used if no commands with a narrower scope are specified for the user.
-     * 
+     *
      * @var BotCommand[]
      */
     protected $defaultCommands = [];
 
     /**
      * Array of bot commands, covering all private chats.
-     * 
+     *
      * @var BotCommand[]
      */
     protected $allPrivateChatsCommands = [];
 
     /**
      * Array of bot commands, covering all group and supergroup chats.
-     * 
+     *
      * @var BotCommand[]
      */
     protected $allGroupChatsCommands = [];
 
     /**
      * Array of bot commands, covering all group and supergroup chat administrators.
-     * 
+     *
      * @var BotCommand[]
      */
     protected $allChatAdministratorsCommands = [];
 
     /**
      * Array of bot commands, covering a specific chat.
-     * 
+     *
      * @var BotCommand[][]
      */
     protected $chatCommands = [];
 
     /**
      * Array of bot commands, covering all administrators of a specific group or supergroup chat.
-     * 
+     *
      * @var BotCommand[][]
      */
     protected $chatAdministratorsCommands = [];
 
     /**
      * Array of bot commands, covering a specific member of a group or supergroup chat.
-     * 
+     *
      * @var BotCommand[][][]
      */
     protected $chatMemberCommands = [];
@@ -162,7 +162,7 @@ class HandlerKernel
         foreach ($scopes as $scope) {
             $commands = $this->getScope($scope);
             if (count($commands) == 0) continue;
-            
+           
             foreach ($this->extractCommands($commands) as $dataset) {
                 $params = [ 'scope' => ['type' => $scope ] ];
                 if (isset($dataset['params'][0])) $params['scope']['chat_id'] = $dataset['params'][0];

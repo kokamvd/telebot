@@ -34,7 +34,7 @@ Library provides a Facade, artisan commands and notification channel to simplify
 ##### Facade
 ```php
 TeleBot::getMe();
-TeleBot::bot('bot2')->getMe(); 
+TeleBot::bot('bot2')->getMe();
 ```
 
 ##### Automatic webhook generation
@@ -55,7 +55,7 @@ $ php artisan telebot:polling
 
 ##### Setup commands autocompletion
 
-The following command will automaticaly setup autocompletion for all registered bot commands on Telegram servers: 
+The following command will automaticaly setup autocompletion for all registered bot commands on Telegram servers:
 ```bash
 $ php artisan telebot:commands --setup
 ```

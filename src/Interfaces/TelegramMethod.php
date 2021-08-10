@@ -28,7 +28,7 @@ abstract class TelegramMethod
 
     /**
      * API URL
-     * 
+     *
      * @var string
      */
     protected $api;
@@ -45,14 +45,14 @@ abstract class TelegramMethod
 
     /**
      * Create new method instance.
-     * 
+     *
      * @param string $method
      * @param string $api
      * @param string $token
      * @param array|null $data
-     * 
+     *
      * @return TelegramMethod
-     * 
+     *
      * @throws TeleBotMehtodException
      */
     public static function create(string $method, string $api, string $token, array $data = null)
