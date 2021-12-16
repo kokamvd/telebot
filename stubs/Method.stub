@@ -1,0 +1,17 @@
+<?php
+
+namespace WeStacks\TeleBot\Methods;
+
+use WeStacks\TeleBot\Interfaces\TelegramMethod;
+use WeStacks\TeleBot\Interfaces\TelegramObject;
+
+{{ classDoc }}
+class {{ class }} extends TelegramMethod
+{
+    protected string $method = "{{ method }}";
+    protected string $expect = TelegramObject::class;
+
+    protected array $parameters = [
+{{ parameters }}
+    ];
+}

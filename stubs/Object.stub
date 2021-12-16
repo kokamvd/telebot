@@ -1,0 +1,14 @@
+<?php
+
+namespace WeStacks\TeleBot\Objects;
+
+use WeStacks\TeleBot\Interfaces\TelegramObject;
+use WeStacks\TeleBot\Objects\{
+    {{ classObjects }}
+};
+
+{{ classDoc }}
+class {{ class }} extends TelegramObject
+{
+    protected array $attributes = {{ parameters }};
+}
